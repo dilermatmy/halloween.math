@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halloween Math Quest</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #17131f;
+  color: #fff5e9;
+  font-family: Georgia, serif;
+}
+
+nav {
+  padding: 24px 8%;
+  border-bottom: 1px solid #393044;
+  display: flex;
+  justify-content: space-between;
+  color: #f59e0b;
+  letter-spacing: 2px;
+}
+
+.hero {
+  min-height: 80vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(ellipse, #43254e, #17131f 70%);
+}
+
+.tag {
+  color: #fb923c;
+  letter-spacing: 4px;
+  font: 12px Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(42px, 8vw, 86px);
+  margin: 25px 0;
+  line-height: 1;
+}
+
+h1 span { color: #fb923c; }
+
+p {
+  color: #c9bdcf;
+  font: 16px/1.7 Arial, sans-serif;
+  max-width: 480px;
+}
+
+button {
+  margin-top: 28px;
+  padding: 16px 30px;
+  background: #fb923c;
+  color: #211529;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+button:hover { background: #fdba74; }
+
+#secret {
+  display: none;
+  margin-top: 25px;
+  color: #fbbf24;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #81758a;
+  font: 12px Arial, sans-serif;
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <span>✦ GRIMOIRE</span>
+  <span>OCTOBER 31</span>
+</nav>
+
+<main class="hero">
+  <div class="tag">A magical mathematics adventure</div>
+
+  <h1>Halloween<br><span>Math Quest</span></h1>
+
+  <p>
+    Stara magia budzi się do życia.
+    Rozwiąż matematyczne zagadki,
+    odkryj sekrety i przełam klątwę.
+  </p>
+
+  <button onclick="startQuest()">
+    ROZPOCZNIJ PRZYGODĘ ↗
+  </button>
+
+  <div id="secret">
+    ✦ Pierwsza zagadka czeka w ciemności...
+    <br><br>
+    Ile wynosi 7 × 8?
+    <br><br>
+    <input id="answer" type="number"
+      placeholder="Twoja odpowiedź">
+    <button onclick="checkAnswer()">SPRAWDŹ</button>
+    <p id="result"></p>
+  </div>
+</main>
+
+<footer>MADE FOR CURIOUS MINDS · 2026</footer>
+
+<script>
+function startQuest() {
+  document.getElementById("secret").style.display = "block";
+}
+
+function checkAnswer() {
+  const answer = document.getElementById("answer").value;
+  document.getElementById("result").textContent =
+    answer === "56"
+      ? "✦ Klątwa przełamana! Możesz iść dalej."
+      : "Spróbuj jeszcze raz, młody czarodzieju.";
+}
+</script>
+</body>
+</html>
